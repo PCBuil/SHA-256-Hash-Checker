@@ -4,15 +4,15 @@ target = 0x0000000000000000000297fa0000000000000000000000000000000000000000
 num=0
 
 print(target)
-#a=input("How much hashes? ")
-for x in range(10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):
+a=input("How much hashes? ")
+for x in range(int(a)):
    hash = hashlib.sha256(str(num).encode()).hexdigest()
 
    if int(hash,16) <= target:
-      print("Hash Found!")
+      print("Hash Found!, "+num)
       break
      
-   print(hash)
+   print(hash+" "+num)
    num += 1
 
 b = input("Continue? ")
